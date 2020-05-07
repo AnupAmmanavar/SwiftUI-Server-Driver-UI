@@ -18,6 +18,9 @@
 		61F5EA07246456F300E6956E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA06246456F300E6956E /* Alamofire */; };
 		61F5EA0A2464579B00E6956E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA092464579B00E6956E /* RxSwift */; };
 		61F5EA0D246457CD00E6956E /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA0C246457CD00E6956E /* KingfisherSwiftUI */; };
+		61F5EA102464585D00E6956E /* TmDbRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F5EA0F2464585D00E6956E /* TmDbRepository.swift */; };
+		61F5EA12246458BC00E6956E /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F5EA11246458BC00E6956E /* BaseRepository.swift */; };
+		61F5EA152464592300E6956E /* MoviesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F5EA142464592300E6956E /* MoviesResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		61F5E9F92464556800E6956E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F5EA002464559100E6956E /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		61F5EA03246455D200E6956E /* UIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponent.swift; sourceTree = "<group>"; };
+		61F5EA0F2464585D00E6956E /* TmDbRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmDbRepository.swift; sourceTree = "<group>"; };
+		61F5EA11246458BC00E6956E /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		61F5EA142464592300E6956E /* MoviesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		61F5E9EA2464556700E6956E /* SwiftUI-SDUI */ = {
 			isa = PBXGroup;
 			children = (
+				61F5EA0E2464583A00E6956E /* repository */,
 				61F5EA02246455C200E6956E /* UIComponents */,
 				61F5E9FF2464557F00E6956E /* HomePage */,
 				61F5E9EB2464556700E6956E /* AppDelegate.swift */,
@@ -101,6 +108,24 @@
 				61F5EA03246455D200E6956E /* UIComponent.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		61F5EA0E2464583A00E6956E /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				61F5EA13246458FE00E6956E /* api_models */,
+				61F5EA0F2464585D00E6956E /* TmDbRepository.swift */,
+				61F5EA11246458BC00E6956E /* BaseRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		61F5EA13246458FE00E6956E /* api_models */ = {
+			isa = PBXGroup;
+			children = (
+				61F5EA142464592300E6956E /* MoviesResult.swift */,
+			);
+			path = api_models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				61F5E9EC2464556700E6956E /* AppDelegate.swift in Sources */,
+				61F5EA12246458BC00E6956E /* BaseRepository.swift in Sources */,
 				61F5EA012464559100E6956E /* HomePageController.swift in Sources */,
 				61F5E9EE2464556700E6956E /* SceneDelegate.swift in Sources */,
 				61F5E9F02464556700E6956E /* ContentView.swift in Sources */,
+				61F5EA102464585D00E6956E /* TmDbRepository.swift in Sources */,
 				61F5EA04246455D200E6956E /* UIComponent.swift in Sources */,
+				61F5EA152464592300E6956E /* MoviesResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +417,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
+				minimumVersion = 4.9.1;
 			};
 		};
 		61F5EA082464579B00E6956E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
