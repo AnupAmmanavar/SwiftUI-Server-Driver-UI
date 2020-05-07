@@ -17,7 +17,7 @@ class MovieListUIComponent : UIComponent {
 
     init(movieResult: MoviesResult) {
         self.movieResult = movieResult
-        self.uniqueId = movieResult.title
+        self.uniqueId = movieResult.title ?? "Movies"
     }
 
     func render(uiDelegate: UIDelegate) -> AnyView {
@@ -31,7 +31,7 @@ struct MovieListView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(movieResult.title )
+                Text(movieResult.title ?? "Movies" )
                     .font(.headline)
                     .foregroundColor(.yellow)
                     .padding(.leading)

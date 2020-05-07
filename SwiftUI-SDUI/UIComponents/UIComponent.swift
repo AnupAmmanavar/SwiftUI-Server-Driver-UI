@@ -22,3 +22,20 @@ extension View {
         return AnyView(self)
     }
 }
+
+
+func renderPage(ui: [UIComponent], uiDelegate: UIDelegate) -> AnyView {
+    return
+        ScrollView(.vertical) {
+            VStack {
+                HStack {
+                    Spacer()
+                }
+                ForEach(ui, id: \.uniqueId) { uiComponent in
+                    uiComponent.render(uiDelegate: uiDelegate)
+                }
+                Spacer()
+            }
+
+        }.toAny()
+}

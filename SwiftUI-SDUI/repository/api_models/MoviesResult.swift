@@ -10,7 +10,7 @@ import Foundation
 
 struct MoviesResult: Codable {
     var results: [Movie]
-    let title: String
+    let title: String?
 }
 
 

@@ -31,7 +31,7 @@ struct TvShowListView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(tvShowsResult.title)
+                Text(tvShowsResult.title ?? "Shows")
                     .font(.headline)
                     .foregroundColor(.yellow)
                     .padding(.leading)

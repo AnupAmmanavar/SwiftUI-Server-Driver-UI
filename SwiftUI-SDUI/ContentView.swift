@@ -8,14 +8,23 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View, UIDelegate {
+
+    @ObservedObject
+    var controller: HomePageController
+
     var body: some View {
-        Text("Hello, World!")
+
+        renderPage(ui: controller.uiComponents, uiDelegate: self)
+            .onAppear(perform: {
+                self.controller.loadPage()
+            })
+            .background(SwiftUI.Color.gray.edgesIgnoringSafeArea(.all))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(controller: HomePageController())
     }
 }
