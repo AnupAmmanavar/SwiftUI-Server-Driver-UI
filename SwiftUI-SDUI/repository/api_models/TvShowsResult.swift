@@ -10,6 +10,7 @@ import Foundation
 
 struct TvShowsResult: Codable {
     var results: [TvShow]
+    var title: String
 }
 
 struct TvShow: Codable {

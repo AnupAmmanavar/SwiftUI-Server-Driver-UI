@@ -16,3 +16,9 @@ protocol UIComponent {
     var uniqueId: String  { get }
     func render(uiDelegate: UIDelegate) -> AnyView
 }
+
+extension View {
+    func toAny() -> AnyView {
+        return AnyView(self)
+    }
+}
