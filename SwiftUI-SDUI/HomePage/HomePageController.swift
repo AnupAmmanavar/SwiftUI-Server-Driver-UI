@@ -26,6 +26,7 @@ class HomePageController: ObservableObject {
                  resultSelector: { (movieResult, tvShowsResult, genresResult, languages) in
                     var components: [UIComponent] = []
 
+                    components.append(NotificationComponent(uniqueId: "Subsciption", uiModel: NotificationUIModel(header: "Subsciption", message: "Your subscription has expired", actionText: "Renew")))
                     components.append(MovieListUIComponent(movieResult: MoviesResult(results: movieResult.results, title: "Popular Movies")))
                     components.append(TvShowsListUIComponent(tvShowsResult: tvShowsResult, id: "Popular Tv Shows"))
                     components.append(GenreListComponent(genres: genresResult.genres, uniqueId: "Genre"))
@@ -43,6 +44,14 @@ class HomePageController: ObservableObject {
         )
             .disposed(by: disposableBag)
 
+    }
+
+
+    // Removes the subscriptin component
+    func removeComponent(id: String) {
+        uiComponents = uiComponents.filter() { component in
+            component.uniqueId != id
+        }
     }
 
 }

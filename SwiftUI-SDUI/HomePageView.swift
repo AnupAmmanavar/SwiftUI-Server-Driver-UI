@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View, UIDelegate {
+struct HomePageView: View, UIDelegate, NotificationDelegate {
 
     @ObservedObject
     var controller: HomePageController
@@ -21,10 +21,18 @@ struct ContentView: View, UIDelegate {
             })
             .background(SwiftUI.Color.gray.edgesIgnoringSafeArea(.all))
     }
+
+    func cancelClick(identifier: String) {
+        self.controller.removeComponent(id: identifier)
+    }
+
+    func actionClick() {
+
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(controller: HomePageController())
+        HomePageView(controller: HomePageController())
     }
 }
