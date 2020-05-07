@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		61F5E9F82464556800E6956E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F5E9F62464556800E6956E /* LaunchScreen.storyboard */; };
 		61F5EA012464559100E6956E /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F5EA002464559100E6956E /* HomePageController.swift */; };
 		61F5EA04246455D200E6956E /* UIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F5EA03246455D200E6956E /* UIComponent.swift */; };
+		61F5EA07246456F300E6956E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA06246456F300E6956E /* Alamofire */; };
+		61F5EA0A2464579B00E6956E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA092464579B00E6956E /* RxSwift */; };
+		61F5EA0D246457CD00E6956E /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61F5EA0C246457CD00E6956E /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F5EA0D246457CD00E6956E /* KingfisherSwiftUI in Frameworks */,
+				61F5EA0A2464579B00E6956E /* RxSwift in Frameworks */,
+				61F5EA07246456F300E6956E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +119,11 @@
 			dependencies = (
 			);
 			name = "SwiftUI-SDUI";
+			packageProductDependencies = (
+				61F5EA06246456F300E6956E /* Alamofire */,
+				61F5EA092464579B00E6956E /* RxSwift */,
+				61F5EA0C246457CD00E6956E /* KingfisherSwiftUI */,
+			);
 			productName = "SwiftUI-SDUI";
 			productReference = 61F5E9E82464556700E6956E /* SwiftUI-SDUI.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +152,11 @@
 				Base,
 			);
 			mainGroup = 61F5E9DF2464556700E6956E;
+			packageReferences = (
+				61F5EA05246456F300E6956E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				61F5EA082464579B00E6956E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				61F5EA0B246457CD00E6956E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 61F5E9E92464556700E6956E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +382,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61F5EA05246456F300E6956E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		61F5EA082464579B00E6956E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		61F5EA0B246457CD00E6956E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61F5EA06246456F300E6956E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61F5EA05246456F300E6956E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		61F5EA092464579B00E6956E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61F5EA082464579B00E6956E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		61F5EA0C246457CD00E6956E /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61F5EA0B246457CD00E6956E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61F5E9E02464556700E6956E /* Project object */;
 }
