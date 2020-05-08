@@ -23,7 +23,10 @@ struct HomePageView: View, UIDelegate, NotificationDelegate {
     }
 
     func cancelClick(identifier: String) {
-        self.controller.removeComponent(id: identifier)
+        withAnimation { 
+            self.controller.removeComponent(id: identifier)
+        }
+        
     }
 
     func actionClick() {

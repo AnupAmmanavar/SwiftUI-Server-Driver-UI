@@ -34,6 +34,7 @@ func renderPage(ui: [UIComponent], uiDelegate: UIDelegate) -> AnyView {
                 ForEach(ui, id: \.uniqueId) { uiComponent in
                     uiComponent.render(uiDelegate: uiDelegate)
                 }
+                .transition(AnyTransition.scale)
                 Spacer()
             }
 
