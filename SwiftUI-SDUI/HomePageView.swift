@@ -19,7 +19,7 @@ struct HomePageView: View, UIDelegate, NotificationDelegate {
             .onAppear(perform: {
                 self.controller.loadPage()
             })
-            .background(SwiftUI.Color.gray.edgesIgnoringSafeArea(.all))
+            .background(SwiftUI.Color.white.edgesIgnoringSafeArea(.all))
     }
 
     func cancelClick(identifier: String) {
