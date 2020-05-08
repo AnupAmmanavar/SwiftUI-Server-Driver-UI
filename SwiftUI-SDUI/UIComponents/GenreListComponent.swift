@@ -49,7 +49,7 @@ struct GenreView: View {
         Text(genre.name)
             .foregroundColor(Color.white)
             .padding(.all)
-            .background(/*@START_MENU_TOKEN@*/Color.purple/*@END_MENU_TOKEN@*/)
+            .background(Color.gray)
             .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: 2)
     }
 }

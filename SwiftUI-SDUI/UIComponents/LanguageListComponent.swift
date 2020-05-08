@@ -11,27 +11,27 @@ import SwiftUI
 
 
 struct LanguageListComponent : UIComponent {
-
+    
     let languages: [Language]
     var uniqueId: String = ""
-
+    
     func render(uiDelegate: UIDelegate) -> AnyView {
         LanguageListView(languages: languages).toAny()
     }
-
+    
 }
 
 struct LanguageListView: View {
-
+    
     let languages: [Language]
-
+    
     var body: some View {
         VStack {
             HStack {
                 Text("Languages")
                 Spacer()
             }
-
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(languages, id: \.id) { language in
@@ -47,16 +47,14 @@ struct LanguageListView: View {
 struct LanguageView: View {
     let language: Language
     var body: some View {
-        Button(action: {}) {
+        VStack {
             Text(language.englishName)
-                .fontWeight(.bold)
                 .font(.subheadline)
-                .foregroundColor(.purple)
-                .padding()
-                .overlay(
-                    Capsule(style: .continuous)
-                        .stroke(Color.purple)
-            )
+                .foregroundColor(Color.white)
+                .padding(.all)
+                .background(Color.gray)
+                .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: 2)
+            
         }
     }
 }
@@ -66,5 +64,5 @@ struct LanguageView_Preview: PreviewProvider {
         LanguageView(language: Language(id: "en", englishName: "English", name: "English"))
             .background(SwiftUI.Color.gray.edgesIgnoringSafeArea(.all))
     }
-
+    
 }

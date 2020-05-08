@@ -28,7 +28,7 @@ class HomePageController: ObservableObject {
 
                     components.append(NotificationComponent(uniqueId: "Subsciption", uiModel: NotificationUIModel(header: "Subsciption", message: "Your subscription has expired", actionText: "Renew")))
                     components.append(MovieListUIComponent(movieResult: MoviesResult(results: movieResult.results, title: "Popular Movies")))
-                    components.append(TvShowsListUIComponent(tvShowsResult: tvShowsResult, id: "Popular Tv Shows"))
+                    components.append(TvShowsListUIComponent(tvShowsResult: TvShowsResult(results: tvShowsResult.results, title: "Popular Tv Shows")))
                     components.append(GenreListComponent(genres: genresResult.genres, uniqueId: "Genre"))
                     components.append(LanguageListComponent(languages: languages, uniqueId: "Languages"))
 
