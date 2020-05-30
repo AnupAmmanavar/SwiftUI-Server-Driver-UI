@@ -27,7 +27,7 @@ This article will talk about server-driven UI, its implementation using re-usabl
 
 ## SwiftUI ##
  Swift is a UI toolkit that lets you design application screens in a programmatic, declarative way.
-```
+```swift
   struct NotificationView: View {
       let notificationMessage: String
 
@@ -53,7 +53,7 @@ __Input:__ Firstly, for the UIComponent to render itself, it should be provided 
 
 #### UIComponent implementation ####
 
-```
+```swift
 protocol UIComponent {
     var uniqueId: String  { get }
     func render() -> AnyView
@@ -67,7 +67,7 @@ protocol UIComponent {
 Let's look at NotificationComponent.
 
 
-```
+```swift
 struct NotificationComponent: UIComponent {
     var uniqueId: String
     
