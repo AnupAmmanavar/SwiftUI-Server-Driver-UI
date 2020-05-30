@@ -172,11 +172,25 @@ struct HomePageView: View {
 }
 ```
 
-#### Generic Vstack #### 
+#### Rendering using Generic Vstack #### 
   All the UIComponents are rendered vertically using a VStack inside. As the UIComponents are uniquely identifiable, we can use the `ForEach` construct for rendering.
   
  Since all the components conforming to UIComponent protocol must return a common type, *__the render() function returns AnyView__*. Below is an extension on the View for converting it toAnyView.
  ```swift
- Since all the components conforming to UIComponent protocol must return a common type, the render() function returns AnyView . Below is an extension on the View for converting it toAnyView.
- ```
+extension View {
+    func toAny() -> AnyView {
+        return AnyView(self)
+    }
+}
+```
+
+### Conclusion ###
+We saw how `UIComponent` can be used to give the server control over the UI of the application. But with UIComponents you can achieve something more.
+
+Let’s consider a case without server-driven UI. It's often the case that the pieces of UI are used many times across the application. This leads to duplication of the view and view logic. So, it’s better to divide the UI into meaningful, reusable UI-components.
+
+Having them this way will let the domain-layer/business layer define and construct the UI components. Additionally, the business-layer can take the responsibility of controlling the UI.
+
+Have a look at the article __[Android Jetpack Compose — Create a Component-Based Architecture](https://medium.com/better-programming/create-a-component-based-architecture-in-android-jetpack-compose-96980c191351)__, which explains UI-Components in detail. As it uses Jetpack compose-Android’s declarative UI kit, it wouldn’t be hard to understand.
+
 
