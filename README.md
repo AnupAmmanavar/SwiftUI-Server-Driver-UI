@@ -2,14 +2,18 @@
 
 Please go to this [Server-Driven-UI Architecture using UIComponents ](https://medium.com/better-programming/build-a-server-driven-ui-using-ui-components-in-swiftui-466ecca97290) if you would like to read it on medium platform
 
-This article will talk about server-driven UI, its implementation using re-usable components called UIComponents, and creating a generic vertical list view for rendering UI components. It will conclude with a brief discussion of how UI components can serve different purposes.
+This article will talk about 
+* Server-Driven UI, 
+* Its implementation using re-usable components called `UIComponents`, and
+* Creating a generic vertical list view for rendering UI components. 
+* tIt will conclude with a brief discussion of how UI components can serve different purposes.
 
 ### What Is Server-Driven UI? ###
 * It is an architecture where the server decides the UI views that need to be rendered on the application screen.
 * There exists a contract between the application and the server. The basis of this __contract__ gives the server control over the UI of the application.
 
 
-#### What is that contract?- 
+#### Contract 🤔
 * The server defines the list of components. 
 * For each of the components defined at the server, we have a corresponding UI implementation in the app (UIComponent). 
 
