@@ -44,7 +44,7 @@ This is a three-step process.
 2. Construct the UIComponents based on the API response.
 3. Render the UIComponents on the screen.
 
-### Step 1. Define standalone UIComponents ###
+### Step 1 - Define standalone UIComponents ###
 
 ![](https://miro.medium.com/max/1400/1*vaTfkYDRJuPnUQm8nYskgQ.png)
 
@@ -104,3 +104,44 @@ struct NotificationView: View {
 
 * `NotificationUIModel` is the data required by the component to render. This is the input to the UIComponent.
 * `NotificationView` is a SwiftUI view that defines the UI of the component. It takes in `NotificationUIModel` as a dependency. This view is the output of the UIComponent when used for rendering on the screen.
+
+
+### Step 2 - Construct the UIComponents based on the API response ###
+```swift
+ class HomePageController: ObservableObject {
+ 
+    let repository: Repository
+    @Published var uiComponents: [UIComponent] = []
+  
+    ..
+    .. 
+    
+    func loadPage() {
+        val response = repository.getHomePageResult()
+        response.forEach { serverComponent in
+          let uiComponent = parseToUIComponent(serverComponent)
+          uiComponents.append(uiComponent)
+        }
+    }
+}
+
+func parseToUIComponent(serverComponent: ServerComponent) -> UIComponent {
+  var uiComponent: UIComponent
+  
+  if serverComponent.type == "NotificationComponent" {
+    uiComponent = NotificationComponent(serverComponent.data, serverComponent.id)
+  }
+  else if serverComponent.type == "GenreListComponent" {
+    uiComponent = GenreListComponent(serverComponent.data, serverComponent.id)
+  }
+  ...
+  ...
+  return uiComponent
+}
+```
+
+* `HomePageController` loads the server components from the repository and converts them into the UIComponents.
+* The `uiComponent`'s property is responsible for holding the list of UIComponents. Wrapping it with the `@Published` property makes it an observable. Any change in its value will be published to the `Observer(View)`. __This makes it possible to keep the View in sync with the state of the application.__
+
+
+
