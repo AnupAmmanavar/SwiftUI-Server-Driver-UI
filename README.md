@@ -149,7 +149,7 @@ func parseToUIComponent(serverComponent: ServerComponent) -> UIComponent {
 * The `uiComponent`'s property is responsible for holding the list of UIComponents. Wrapping it with the `@Published` property makes it an observable. Any change in its value will be published to the `Observer(View)`. *__This makes it possible to keep the View in sync with the state of the application.__*
 
 
-### Step 3 - Render UIComponents on the screen using Generic List###
+### Step 3 - Render UIComponents on the screen using Generic List ###
 This the last part. The screen’s only responsibility is to render the `UIComponents`. 
 * It subscribes to the `uiComponents` observable. 
 * Whenever the value of the `uiComponents` changes, the `HomePage` is notified, which then updates its UI. 
