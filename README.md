@@ -1,5 +1,7 @@
 # SwiftUI-Server-Driver-UI
 
+Please go to this [link](https://medium.com/better-programming/build-a-server-driven-ui-using-ui-components-in-swiftui-466ecca97290) if you would like to read it on medium platform
+
 This article will talk about server-driven UI, its implementation using re-usable components called UIComponents, and creating a generic vertical list view for rendering UI components. It will conclude with a brief discussion of how UI components can serve different purposes.
 
 ### What Is Server-Driven UI? ###
