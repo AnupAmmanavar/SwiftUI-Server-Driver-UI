@@ -8,7 +8,7 @@ This article will talk about
 * Creating a generic vertical list view for rendering UI components. 
 * tIt will conclude with a brief discussion of how UI components can serve different purposes.
 
-### What Is Server-Driven UI? ###
+## What Is Server-Driven UI? ##
 * It is an architecture where the server decides the UI views that need to be rendered on the application screen.
 * There exists a contract between the application and the server. The basis of this __contract__ gives the server control over the UI of the application.
 
@@ -31,7 +31,7 @@ This article will talk about
     
 ----
 
-## SwiftUI ##
+### SwiftUI ###
  Swift is a UI toolkit that lets you design application screens in a programmatic, declarative way.
 ```swift
   struct NotificationView: View {
@@ -43,7 +43,7 @@ This article will talk about
   }
 ```
 
-### Server-Driven UI Implementation in SwiftUI ###
+## Server-Driven UI Implementation in SwiftUI ##
 
 This is a three-step process.
 1. Define the standalone UIComponents.
@@ -150,7 +150,7 @@ func parseToUIComponent(serverComponent: ServerComponent) -> UIComponent {
 * The `uiComponent`'s property is responsible for holding the list of UIComponents. Wrapping it with the `@Published` property makes it an observable. Any change in its value will be published to the `Observer(View)`. *__This makes it possible to keep the View in sync with the state of the application.__*
 
 
-### Step 3 - Render UIComponents on the screen ###
+### Step 3 - Render UIComponents on the screen using Generic List###
 This the last part. The screen’s only responsibility is to render the `UIComponents`. 
 * It subscribes to the `uiComponents` observable. 
 * Whenever the value of the `uiComponents` changes, the `HomePage` is notified, which then updates its UI. 
@@ -190,7 +190,7 @@ extension View {
 }
 ```
 
-### Conclusion ###
+## Conclusion ##
 We saw how `UIComponent` can be used to give the server control over the UI of the application. But with UIComponents you can achieve something more.
 
 Let’s consider a case without server-driven UI. It's often the case that the pieces of UI are used many times across the application. This leads to duplication of the view and view logic. So, it’s better to divide the UI into meaningful, reusable UI-components.
