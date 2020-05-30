@@ -141,7 +141,42 @@ func parseToUIComponent(serverComponent: ServerComponent) -> UIComponent {
 ```
 
 * `HomePageController` loads the server components from the repository and converts them into the UIComponents.
-* The `uiComponent`'s property is responsible for holding the list of UIComponents. Wrapping it with the `@Published` property makes it an observable. Any change in its value will be published to the `Observer(View)`. __This makes it possible to keep the View in sync with the state of the application.__
+* The `uiComponent`'s property is responsible for holding the list of UIComponents. Wrapping it with the `@Published` property makes it an observable. Any change in its value will be published to the `Observer(View)`. *__This makes it possible to keep the View in sync with the state of the application.__*
 
 
+### Step 3 - Render UIComponents on the screen ###
+This the last part. The screen’s only responsibility is to render the `UIComponents`. 
+* It subscribes to the `uiComponents` observable. 
+* Whenever the value of the `uiComponents` changes, the `HomePage` is notified, which then updates its UI. 
+* A generic ListView is used for rendering the UIComponents
+
+```swift
+struct HomePageView: View {
+    
+    @ObservedObject var controller: HomePageViewModel
+    
+    var body: some View {
+    
+        ScrollView(.vertical) {
+            VStack {
+                ForEach(controller.uiComponents, id: \.uniqueId) { uiComponent in
+                    uiComponent.render()
+                }
+            }
+        }
+        .onAppear(perform: {
+            self.controller.loadPage()
+        })
+        
+    }
+}
+```
+
+#### Generic Vstack #### 
+  All the UIComponents are rendered vertically using a VStack inside. As the UIComponents are uniquely identifiable, we can use the `ForEach` construct for rendering.
+  
+ Since all the components conforming to UIComponent protocol must return a common type, *__the render() function returns AnyView__*. Below is an extension on the View for converting it toAnyView.
+ ```swift
+ Since all the components conforming to UIComponent protocol must return a common type, the render() function returns AnyView . Below is an extension on the View for converting it toAnyView.
+ ```
 
