@@ -29,7 +29,6 @@ This article will talk about
 #### Contract #### 
     For every server component, we have a corresponding UIComponent.
     
-----
 
 ### SwiftUI ###
  Swift is a UI toolkit that lets you design application screens in a programmatic, declarative way.
