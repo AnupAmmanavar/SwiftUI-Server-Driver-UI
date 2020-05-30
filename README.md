@@ -18,7 +18,7 @@ This article will talk about
 * For each of the components defined at the server, we have a corresponding UI implementation in the app (UIComponent). 
 
 
- Consider an entertainment app like Hotstar, whose contract is defined as shown below. On the left are the components from the server, and on the right are the corresponding UI components.
+ Consider an entertainment app like Hotstar, whose contract is defined as shown below. On the left are the components from the server(__ServerComponent__), and on the right are the corresponding __UI Components__.
 
 ![](https://miro.medium.com/max/1400/1*e0caqOJanQdl7yvrU1Y0pg.png)
 
