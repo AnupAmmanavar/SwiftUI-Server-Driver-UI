@@ -27,8 +27,8 @@ This article will talk about
 * To make it possible, we have to create views that are standalone and can be reused throughout the application. We call these re-usable views the UIComponent.
 
 #### Contract #### 
-    For every server component, we have a corresponding UIComponent.
-    
+> For every ServerComponent, we have a corresponding UIComponent.
+
 
 ### SwiftUI ###
  Swift is a UI toolkit that lets you design application screens in a programmatic, declarative way.
