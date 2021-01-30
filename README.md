@@ -1,4 +1,4 @@
-# SwiftUI-Server-Driver-UI
+# SwiftUI-Server-Driven-UI
 
 Please go to this __[Server-Driven-UI Architecture using UIComponents](https://medium.com/better-programming/build-a-server-driven-ui-using-ui-components-in-swiftui-466ecca97290)__ if you would like to read it on [Medium](https://medium.com/better-programming/build-a-server-driven-ui-using-ui-components-in-swiftui-466ecca97290) platform
 
